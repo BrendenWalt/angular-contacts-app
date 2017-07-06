@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Solstice Contacts Code Challenge</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/angular.min.js"></script>
+  
+</head>
+<body ng-app="Solstice" ng-controller="Contacts as main">
+
+  <div class="container">
+    <div class="contacts-list-wrapper" ng-show="main.showList">
+
+      <div class="list-contact-container" ng-repeat="contact in main.contacts">
+
+        <div class="list-contact" ng-click="main.onContactClick(contact)" ng-class="{ active: main.isActive(contact)}">
+          <img ng-src="{{ contact.smallImageURL }}" alt="{{ contact.name }}" />
+          <div class="contact-details">
+            <h2>{{ contact.name }}</h2>
+            <h4>{{ contact.phone.work }}</h4>
+          </div><!-- Contact Details -->
+        </div><!-- list-contact -->
+
+      </div><!-- list-contact-container -->
+    </div><!-- contacts-list-wrapper -->
+
+    <div class="featured-contact-wrapper">
+
+      <div class="mobile-nav">
+        <a href="#" ng-click="main.showContactsList()" ng-show="!main.showList" id="allContactsLink"><span>&lt;</span>&nbsp;All Contacts</a>
+      </div><!-- mobile-nav -->
+
+      <div class="contact-header">
+        <img ng-src="{{ main.contactSelected.largeImageURL }}" alt="{{ main.contactSelected.name }}"/>
+        <div class="contact-headline">
+          <p>Name:</p>
+          <h1 class="contact-name">{{ main.contactSelected.name }}</h1>
+          <p>Company:</p>
+          <h3>{{ main.contactSelected.company }}</h3>
+        </div><!-- contact-headline -->
+      </div><!-- contact-header -->
+
+      <div class="contact-phone">
+        <p>Phone:</p>
+        <h3 class="inline">{{ main.contactSelected.phone.home }}</h3>
+        <h3 class="label">Home</h3>
+      </div><!-- contact-phone-->
+
+      <div class="contact-address">
+        <p>Address:</p>
+        <h3 class="inline">{{ main.contactSelected.address.street }}</h3>
+        <h3 class="label">Work</h3>
+        <h3>{{ main.contactSelected.address.city }},&nbsp;
+            {{ main.contactSelected.address.state }}
+            {{ main.contactSelected.address.zip }}</h3>
+      </div><!-- contact-address -->
+
+      <div class="contact-birthday">
+        <p>Birthday:</p>
+        <h3>{{ main.contactSelected.birthdate | date: 'longDate'}}</h3>
+      </div><!-- contact-birthday -->
+
+      <div class="contact-email">
+        <p>Email:</p>
+        <a href="mailto:{{main.contactSelected.email}}">{{main.contactSelected.email}}</a>
+        <h3 class="label">Work</h3>
+      </div><!-- contact-email -->
+      
+    </div><!-- featured-contact -->
+    
+  </div><!-- container -->
+  
+  <script src="js/script.js"></script>
+</body>
+</html>

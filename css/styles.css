@@ -1,0 +1,165 @@
+/* === Global Styles === */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  overflow-x: hidden;
+}
+html, body{
+  padding: 0;
+  margin: 0;
+ }
+h1, h2, h3, h4, p, a {
+  font-family: sans-serif;
+  margin: 0;
+  color: #474747;
+}
+
+.container {
+  display: flex;
+  overflow:hidden;
+  height: 100vh;
+  position: relative;
+  width: 100%;
+}
+
+.inline {
+  display: inline-block;
+}
+
+/* === LIST CONTACT STYLES === */
+.contacts-list-wrapper {
+  width: 30%;
+  min-width: 400px;
+  overflow-y:auto;
+  height:auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: none;
+}
+
+.list-contact {
+  background-color: #c1c1c1;
+  border-top: 1px solid #8e8e8e;
+  border-bottom: 1px solid #8e8e8e;
+  padding: 20px 30px;
+}
+
+
+.list-contact:hover {
+  cursor: pointer;
+  background-color: #999999;
+}
+
+.active {
+  background-color: #999999;
+}
+
+.list-contact img {
+  display: inline-block;
+  border-radius: 100%;
+  padding: 0 10px 0 0;
+}
+
+.contact-details {
+  display: inline-block;
+}
+
+.contact-details h2 {
+  margin-bottom: 5px;
+ }
+
+.contact-details h4 {
+  font-weight: 200;
+}
+
+/* === Featured Contact === */
+.featured-contact-wrapper {
+  flex:1;
+  padding: 50px 80px;
+}
+
+#allContactsLink {
+  text-decoration: none;
+}
+
+#allContactsLink span {
+  font-weight: bold;
+}
+
+.label {
+  float: right;
+}
+
+.featured-contact-wrapper p, h1, h3 {
+  margin: 0;
+}
+
+.featured-contact-wrapper > div {
+  margin: 0 0 30px;
+}
+
+.contact-header {
+  margin: 0 0 30px 0;
+}
+.contact-header img{
+  padding-right: 30px;
+}
+
+.contact-headline {
+  display: inline-block;
+}
+
+.contact-name {
+  margin-bottom: 15px;
+}
+
+.contact-email a{
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+}
+.contact-email a:hover {
+  cursor: pointer;
+}
+
+/* === Media Queries === */
+@media screen and (max-width: 1024px) {
+  .list-contact {
+    margin-bottom: 5px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  #allContactsLink {
+    display: inline-block;
+  }
+
+  .contacts-list-wrapper {
+    width: 100%;
+    min-width:100%;
+    overflow-x: hidden;
+  }
+
+  .list-contact {
+    padding: 20px 5%;
+  }
+
+  .featured-contact-wrapper {
+    padding: 10% 5%;
+    overflow-y: auto;
+  }
+
+  .contact-header img {
+    padding-right: 10px;
+  }
+
+
+}
+
+
+
+
+
+
+
